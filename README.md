@@ -67,11 +67,17 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+        <li>
+      <a href="#coding-exercise">Coding Exercise</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#solution">Solution</a></li>
+      </ul>
+    </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -80,11 +86,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
-
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
@@ -101,6 +103,8 @@
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+
+  - Python 3.10
 
 ### Installation
 
@@ -132,7 +136,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
-##  Coding Exercise Description
+##  Coding Exercise
+
+### Description
 
 The company ACME offers their employees the flexibility to work the hours they want. They will pay for the hours worked based on the day of the week and time of day, according to the following table:
 
@@ -178,6 +184,16 @@ For example:
 > OUTPUT:
 > 
 > The amount to pay ASTRID is: 85 USD
+
+
+
+### Solution
+
+Due to the simplicity of the initial problem, I can use a few functions in a Python script to solve the problem. But thinking that the business description can change in the future, the system can grow up, and the idea of the challenge is to show the development skills to solve a real problem, I'm going to take an approach a bit more sophisticated, making the solution scalable, easy to maintain and extend.
+
+With that in mind, I'll follow the OOD methodology to solve the problem. I split the problem into minor parts, thinking about these parts as the entities that I can identify from the business description (User/Employee, hours worked, data) and some other entities not explicitly mentioned in the business description, but they will give the possibility to extend the solution, like (Parser, DataLoader, Output).
+
+I decided to use the TDD process to build the solution, always using good principles in the development process.
 
 ## Roadmap
 
