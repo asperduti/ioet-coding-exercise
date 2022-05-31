@@ -112,6 +112,11 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git clone https://github.com/asperduti/ioet-coding-exercise.git
    ```
+2. Create a virtual environment and activate it
+   ```sh
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 3. Install Python packages, just for dev(testing, formatting, etc.)
    ```sh
    pip install -r requirements.txt
@@ -124,17 +129,77 @@ To get a local copy up and running follow these simple example steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Run the application with the following command:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```sh
+python main.py <filename>
+```
+
+You can show a demo with the example data:
+
+```sh
+python main.py examples/registros.txt
+```
+
+And you will see:
+  
+```sh
+The amount to pay RENE is: 215.0 USD
+The amount to pay ASTRID is: 85.0 USD
+The amount to pay GABRIEL is: 55.0 USD
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Run tests and coverage
+If you want to develop and run tests, the project use **pytest**.
+So, execute the next command to run tests:
 
+```sh
+python -m pytest tests
+```
 
-<!-- ROADMAP -->
+And to check the coverage:
+```sh
+python -m pytest --cov --cov-fail-under=100
+```
+The output for the actual coverage is:
 
+```sh
+plugins: cov-3.0.0
+collected 9 items                                                                                                                                                                                                       
 
+tests/test_file_data_loader.py ..[ 22%]
+tests/test_payout.py .           [ 33%]
+tests/test_printer.py .          [ 44%]
+tests/test_statement_parser.py . [ 55%]
+tests/test_user.py .             [ 66%]
+tests/test_work_statement.py ..  [100%]
+
+---------- coverage: platform linux, python 3.10.4-final-0 -----------
+Name                                      Stmts   Miss  Cover
+-------------------------------------------------------------
+ioet_coding_exercise/FileDataLoader.py       14      0   100%
+ioet_coding_exercise/Payout.py               11      0   100%
+ioet_coding_exercise/Printer.py               5      0   100%
+ioet_coding_exercise/Rules.py                 4      0   100%
+ioet_coding_exercise/StatementParser.py      17      0   100%
+ioet_coding_exercise/User.py                  5      0   100%
+ioet_coding_exercise/WorkStatement.py        19      0   100%
+ioet_coding_exercise/__init__.py              1      0   100%
+ioet_coding_exercise/utils.py                 4      0   100%
+tests/__init__.py                             0      0   100%
+tests/test_file_data_loader.py                9      0   100%
+tests/test_payout.py                         14      0   100%
+tests/test_printer.py                        11      0   100%
+tests/test_statement_parser.py                9      0   100%
+tests/test_user.py                            5      0   100%
+tests/test_work_statement.py                 13      0   100%
+-------------------------------------------------------------
+TOTAL                                       141      0   100%
+
+Required test coverage of 100% reached. Total coverage: 100.00%
+```
 
 ##  Coding Exercise
 

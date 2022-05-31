@@ -1,4 +1,3 @@
-from ioet_coding_exercise.WorkStatement import WorkStatement
 from ioet_coding_exercise.User import User
 
 

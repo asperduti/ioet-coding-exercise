@@ -1,10 +1,12 @@
+import sys
+
 from ioet_coding_exercise.FileDataLoader import FileDataLoader
 from ioet_coding_exercise.Printer import Printer
 from ioet_coding_exercise.Payout import Payout
 
 
-def main():
-    db = FileDataLoader("registros.txt")
+def main(filepath: str):
+    db = FileDataLoader(filepath)
     output = Printer("The amount to pay {username} is: {payout} USD")
 
     payouts = Payout.run(users=db.get_users())
@@ -13,4 +15,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) != 2:
+        print("You must provide only the filename as argument.")
+    else:
+        filepath = sys.argv[1]
+        main(filepath)
