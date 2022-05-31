@@ -1,5 +1,5 @@
+from datetime import timedelta
 from ioet_coding_exercise.Rules import DAYS_RATES
-from ioet_coding_exercise.utils import str_to_time
 
 
 class WorkStatement:
@@ -16,10 +16,10 @@ class WorkStatement:
             given by HH:MM.
     """
 
-    def __init__(self, day: str, start_time: str, end_time: str):
+    def __init__(self, day: str, start_time: timedelta, end_time: timedelta):
         self.day = day
-        self.start_time = str_to_time(start_time)
-        self.end_time = str_to_time(end_time)
+        self.start_time = start_time
+        self.end_time = end_time
 
     def get_cost(self) -> float:
         """Return the cost of the Work Statement.

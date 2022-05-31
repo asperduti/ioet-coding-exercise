@@ -8,21 +8,14 @@ class Payout:
     """
 
     @staticmethod
-    def run(data, parser):
-        for registro in data.get_data():
-            registro_parsed = parser.parse(registro)
-            work_statements = [
-                WorkStatement(
-                    day=work_statement["day"],
-                    start_time=work_statement["start_time"],
-                    end_time=work_statement["end_time"],
-                )
-                for work_statement in registro_parsed["work_statements"]
-            ]
+    def run(users: list[User]) -> list:
+        payouts = []
 
-            new_user = User(name=registro_parsed["user"], statements=work_statements)
-
+        for user in users:
             salary = 0.0
-            for work_statement in new_user.statements:
+            for work_statement in user.statements:
                 salary += work_statement.get_cost()
-            print(f"The amount to pay {new_user.name} is: {salary} USD")
+
+            payouts.append({"username": user.name, "salary": salary})
+
+        return payouts

@@ -1,3 +1,6 @@
+from ioet_coding_exercise.WorkStatement import WorkStatement
+
+
 class User:
     """
     Users in the systemm, in this particular case is the same as a employee
@@ -8,6 +11,6 @@ class User:
             for the user.
     """
 
-    def __init__(self, name: str, statements: list = None):
+    def __init__(self, name: str, statements: list[WorkStatement] = None):
         self.name = name
-        self.statements = statements if statements is not None else []
+        self.statements = statements or []

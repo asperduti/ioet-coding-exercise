@@ -1,20 +1,29 @@
+from ioet_coding_exercise.User import User
+from ioet_coding_exercise.WorkStatement import WorkStatement
+from ioet_coding_exercise.utils import str_to_time
+
+
 class StatementParser:
     @classmethod
-    def parse(self, statement: str) -> dict:
-        result = {}
+    def parse(self, statement: str) -> User:
+
         user, work_statements = statement.strip().split("=")
-        result["user"] = user
-        result["work_statements"] = []
+
+        new_user = User(name=user)
+        work_statements_aux: list[WorkStatement] = []
+
         for work_statement in work_statements.split(","):
             day = work_statement[:2]
             times = work_statement[2:]
             start_time, end_time = times.split("-")
 
-            result["work_statements"].append(
-                {
-                    "day": day,
-                    "start_time": start_time,
-                    "end_time": end_time,
-                }
+            new_work_statement = WorkStatement(
+                day=day,
+                start_time=str_to_time(start_time),
+                end_time=str_to_time(end_time),
             )
-        return result
+
+            work_statements_aux.append(new_work_statement)
+        new_user.statements = work_statements_aux
+
+        return new_user
