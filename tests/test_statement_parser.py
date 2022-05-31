@@ -1,4 +1,5 @@
 from ioet_coding_exercise.StatementParser import StatementParser
+from ioet_coding_exercise.User import User
 
 
 def test_statementparser():
@@ -6,8 +7,7 @@ def test_statementparser():
 
     statement_parsed = StatementParser.parse(statement)
 
-    assert type(statement_parsed) is dict
-    assert "user" in statement_parsed
-    assert "work_statements" in statement_parsed
-    assert type(statement_parsed["work_statements"]) is list
-    assert len(statement_parsed["work_statements"]) == 2
+    assert type(statement_parsed) is User
+    assert statement_parsed.name == "RENE"
+    assert type(statement_parsed.statements) is list
+    assert len(statement_parsed.statements) == 2
