@@ -67,8 +67,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-        <li>
-      <a href="#coding-exercise">Coding Exercise</a>
+    <li><a href="#coding-exercise">Coding Exercise</a>
       <ul>
         <li><a href="#description">Description</a></li>
         <li><a href="#solution">Solution</a></li>
