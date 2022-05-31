@@ -17,11 +17,11 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+[![CodeCoverage][code-coverage-shield]][code-coverage-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -304,6 +304,8 @@ Project Link: [https://github.com/asperduti/ioet-coding-exercise](https://github
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[code-coverage-shield]: https://img.shields.io/codecov/c/github/asperduti/ioet-coding-exercise?style=for-the-badge
+[code-coverage-url]: https://app.codecov.io/gh/asperduti/ioet-coding-exercise
 [contributors-shield]: https://img.shields.io/github/contributors/asperduti/ioet-coding-exercise.svg?style=for-the-badge
 [contributors-url]: https://github.com/asperduti/ioet-coding-exercise/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/asperduti/ioet-coding-exercise.svg?style=for-the-badge
